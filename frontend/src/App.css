@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Roboto:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background: #040609;
+  overflow-x: hidden;
+}
+.leaflet-tile {
+  filter: sepia(100%) hue-rotate(300deg) invert(100%);
+}
+.leaflet-marker-icon {
+  width: 30px !important;
+  height: 30px !important;
+}
+.leaflet-popup-content-wrapper {
+  background: #0f1724 !important;
+  color: #ffff !important;
+}
+.leaflet-container {
+  height: 100%;
+  background-color: #0f1724 !important;
+}
+.title {
+  font-family: "Kanit", sans-serif;
+  font-size: 2rem;
+  color: #11ece5;
+  font-weight: bolder;
+  width: 30%;
+}
+@media screen and (max-width: 700px) {
+  .title {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+}
