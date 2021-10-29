@@ -84,7 +84,7 @@ const Header = styled.div`
   border-radius: 15px;
   @media (max-width: 700px) {
     flex-direction: column;
-    height: 15vh;
+    height: 12vh;
   }
 `;
 const First = styled.div`

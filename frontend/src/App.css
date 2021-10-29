@@ -6,6 +6,25 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #0f1724 #11ece5;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0f1724;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #11ece5;
+  border-radius: 20px;
+  border: 3px solid #0f1724;
+}
 body {
   background: #040609;
   overflow-x: hidden;

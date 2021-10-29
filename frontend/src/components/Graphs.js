@@ -4,8 +4,12 @@ import Graph from "./Graph";
 import { useEffect, useState } from "react";
 const Graphs = (props) => {
   const data=props?.data
+  const [name,setName]=useState("");
+
   let [array,setArray]=useState([]);
 useEffect(() => {
+  console.log(props.data);
+    setName(props?.data.district)  
     let arr=[];
     if(data!=undefined){
  Object.keys(data).forEach(key => {
@@ -38,9 +42,6 @@ setArray(arr)
         for (let i = 0; i < crimeArray?.length; i++) {
           arr.push(crimeArray[i].Day);
         }
-        arr = arr.sort(function (a, b) {
-          return new Date(a) - new Date(b);
-        });
         arr.map((e) => {
           e = new Date(e);
           if (e.getMonth() == 10) novC++;
@@ -61,7 +62,7 @@ setArray(arr)
  }
   return(
   <Main> 
-    <Heading>VISUALIZED DATA</Heading>
+    <Heading>{name}</Heading>
   <GraphsSection>
     {array?
     <>

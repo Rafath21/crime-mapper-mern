@@ -1,6 +1,6 @@
 import { Line } from "react-chartjs-2";
 import styled from "styled-components";
-let colors=[["#11ece5"],["rgba(255,0,35,20)"],["rgba(255,81,0,20)"],["rgba(149,29,118,70)"]]
+let colors=[["#11ece5"],["rgba(255,0,35,20)"],["rgba(255,81,0,20)"],"#ea8cf5","#a06bf5","#d9d55f","#d99d5f","#5aef58","#e7e36e"]
 let color= colors[Math.floor(Math.random()*colors.length)];
 const Graph=(props)=>{
     let values=props.values
@@ -22,8 +22,8 @@ const Graph=(props)=>{
             datasets: [
               {
                 label: `${props.name}`,
-                backgroundColor:"black",
-                borderColor: "#11ece5",
+                backgroundColor:"rgb(255,255,255)",
+                borderColor: colors[Math.floor(Math.random()*colors.length)],
                 data: 
                  values
                 ,
