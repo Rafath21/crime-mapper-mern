@@ -1,27 +1,34 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Map from "./Map";
 import Graphs from "./Graphs";
 import styled from "styled-components";
 import "../App.css";
 import { Districts } from "./util";
 import axios from "axios";
+import Loader from "react-loader-spinner";
 const Home = () => {
   let [currDistrict, setCurrDistrict] = useState("");
   let [dataObj, setDataObj] = useState();
+  let [loading, setLoading] = useState(false);
   const handleChange = async (district) => {
     let config = {
       "Content-type": "application/json",
     };
-    let res = await axios({
-      url: "http://localhost:4000/getCrime",
-      method: "POST",
-      data: {
-        dist: district,
-      },
-      config,
-    });
-    setDataObj(res.data);
+    try {
+      let res = await axios({
+        url: "http://localhost:4000/api/v1/getCrime",
+        method: "POST",
+        data: {
+          dist: district,
+        },
+        config,
+      });
+      setDataObj(res.data);
+      setLoading(false);
+    } catch (err) {
+      alert("something went wrong");
+    }
   };
   return (
     <Main>
@@ -38,6 +45,7 @@ const Home = () => {
             <i
               class="fas fa-search"
               onClick={(e) => {
+                setLoading(true);
                 e.preventDefault();
                 handleChange(currDistrict);
               }}
@@ -45,6 +53,12 @@ const Home = () => {
           </Search>
         </SearchBox>
       </Header>
+      <p className="note">
+        Note: The figures shown on this website are purely fictional. The data
+        has been randomly generated with the help of an automation software.
+        This is just an idea being implemented with the aim to help Criminal
+        Investigation Departments in Telengana or anywhere in the world.
+      </p>
       <First>
         <SidebarSection>
           {Districts &&
@@ -62,6 +76,17 @@ const Home = () => {
               );
             })}
         </SidebarSection>
+        {loading ? (
+          <Loader
+            type="Plane"
+            height={10}
+            width={10}
+            color="#11ece5"
+            className="loader"
+          />
+        ) : (
+          ""
+        )}
         <Map handlefunc={handleChange} data={dataObj}></Map>
       </First>
       {dataObj ? <Graphs data={dataObj}></Graphs> : ""}

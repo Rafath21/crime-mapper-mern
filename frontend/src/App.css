@@ -29,6 +29,12 @@ body {
   background: #040609;
   overflow-x: hidden;
 }
+.note {
+  margin-left: 8px;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #ebf0ffd9;
+}
 .leaflet-tile {
   filter: sepia(100%) hue-rotate(300deg) invert(100%);
 }
@@ -51,9 +57,18 @@ body {
   font-weight: bolder;
   width: 30%;
 }
+.loader {
+  margin-top: 15%;
+}
 @media screen and (max-width: 700px) {
   .title {
     font-size: 0.8rem;
     margin-bottom: 5px;
+  }
+  .loader {
+    display: none;
+  }
+  .note {
+    font-size: 0.6rem;
   }
 }

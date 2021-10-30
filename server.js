@@ -7,8 +7,8 @@ app.use(express.json())
 app.use(cors());
 connectDB();
 app.use(express.static('public'));
-app.use("/addCrime",require("./routes/addRoute"));
-app.use("/getCrime",require("./routes/getRoute"));
+app.use("/api/v1/addCrime",require("./routes/addRoute"));
+app.use("/api/v1/getCrime",require("./routes/getRoute"));
 
 app.listen(process.env.PORT,()=>{
     console.log("server is listening")

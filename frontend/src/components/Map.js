@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { useState, useEffect, useMapEvents } from "react";
+import { useState, useEffect} from "react";
 import L from "leaflet";
-import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "../App.css";
 import { Districts } from "./util";

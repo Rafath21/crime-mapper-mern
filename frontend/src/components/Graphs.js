@@ -8,7 +8,6 @@ const Graphs = (props) => {
 
   let [array,setArray]=useState([]);
 useEffect(() => {
-  console.log(props.data);
     setName(props?.data.district)  
     let arr=[];
     if(data!=undefined){
