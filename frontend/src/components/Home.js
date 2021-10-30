@@ -11,6 +11,7 @@ const Home = () => {
   let [currDistrict, setCurrDistrict] = useState("");
   let [dataObj, setDataObj] = useState();
   let [loading, setLoading] = useState(false);
+  console.log("on home");
   const handleChange = async (district) => {
     let config = {
       "Content-type": "application/json",
