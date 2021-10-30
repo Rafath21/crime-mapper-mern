@@ -17,7 +17,7 @@ const Home = () => {
     };
     try {
       let res = await axios({
-        url: "http://localhost:4000/api/v1/getCrime",
+        url: "/api/v1/getCrime",
         method: "POST",
         data: {
           dist: district,
